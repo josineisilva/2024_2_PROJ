@@ -1,0 +1,52 @@
+- entrar no site https://start.spring.io/
+- em "Project" selecionar "Maven"
+- em "Language" selecionar  "Java"
+- em "Spring Boot" selecionar "3.3.2"
+- preencher os dados do projeto, exemplo:
+  Group: br.unitau.inf
+  Artifact: cursos
+  Name: cursos
+  Description: Demo project for Spring Boot
+  Package name: br.unitau.inf.cursos
+- em "Packaging" selecionar "Jar"
+- em "Java" selecionar "8"
+- em "Dependencies" selcionar:
+  Spring Boot DevTools
+  Spring Web
+  Spring Data JPA
+  PostgreSQL Driver
+  Validation
+- clicar em "Generate"
+- descompactar o arquivo zip no workspace que sera utilizado
+- entrar na IDE Eclipse
+- entrar em File/Import/Maven/Existing Maven Projects
+- localizar o diretorio do projeto
+- clicar em "Abrir"
+- clicar em "Finish"
+- adicionar as dependencias no pom.xml
+  <dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+    <version>2.9.2</version>
+  </dependency>
+  <dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger-ui</artifactId>
+    <version>2.9.2</version>
+  </dependency>
+
+Para setar as variaveis de ambiente, acrescente no arquivo ~/.bashrc as seguintes linhas:
+export CURSOS_DB_URL=jdbc:postgresql://127.0.0.1:5432/<nome do banco>
+export CURSOS_DB_USERNAME=<nome do usuario>
+export CURSOS_DB_PASSWORD=<senha do usuario>
+
+Exemplo:
+export CURSOS_DB_URL=jdbc:postgresql://127.0.0.1:5432/projeto
+export CURSOS_DB_USERNAME=projeto
+export CURSOS_DB_PASSWORD=projeto
+
+Quando o webservice estiver em execucao, a documentacao pode ser acessada pelo link
+http://localhost:8080/swagger-ui.html
+
+A colecao do Postman para testar o webservice pode ser acessada pelo link
+https://www.postman.com/josinei
